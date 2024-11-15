@@ -33,7 +33,7 @@ public class ShipController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
     }
-    @PostMapping("/{shipId}")
+    @PutMapping("/{shipId}")
     public ResponseEntity<Ship> updateShip(@PathVariable int shipId,@RequestBody Ship ship){
         if(shipService.updateShip(ship,shipId)!=null){
             return ResponseEntity.status(HttpStatus.OK).body(ship);
