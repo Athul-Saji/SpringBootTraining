@@ -25,6 +25,7 @@ public class CollegeService {
 
     @Transactional
     public Student createStudent(Long collegeId, Student student) {
+        collegeRepository.
         College college = collegeRepository.findById(collegeId)
                 .orElseThrow(() -> new IllegalArgumentException("College not found"));
         student.setCollege(college);
